@@ -7,9 +7,8 @@
 ## Miscellaneous
 
 ```
-TimeDateStamp = 0x63d1d61c
-CheckSum = 0x223fe59
-GameVersion = "v3.0.24.34"
+TimeDateStamp = 0x63e17189
+CheckSum = 0x223f6af
 ```
 
 ## NetworkedStringTables
@@ -116,12 +115,6 @@ class_id: `0`
 sizeof: `0x1980`  
 </details>
 <details>
-<summary><code>client_class CBaseButton</code></summary>
-
-class_id: `0`  
-sizeof: `0xaa0`  
-</details>
-<details>
 <summary><code>client_class CBaseCombatCharacter</code></summary>
 
 class_id: `0`  
@@ -137,13 +130,7 @@ sizeof: `0xa60`
 <summary><code>client_class CBaseGrenade</code></summary>
 
 class_id: `0`  
-sizeof: `0x2ee0`  
-</details>
-<details>
-<summary><code>client_class CBaseParticleEntity</code></summary>
-
-class_id: `0`  
-sizeof: `0xa60`  
+sizeof: `0x2ef0`  
 </details>
 <details>
 <summary><code>client_class CBaseTempEntity</code></summary>
@@ -192,6 +179,12 @@ sizeof: `0x1640`
 
 class_id: `0`  
 sizeof: `0xec0`  
+</details>
+<details>
+<summary><code>client_class CCarePackageInsightProp</code></summary>
+
+class_id: `0`  
+sizeof: `0x1690`  
 </details>
 <details>
 <summary><code>client_class CCascadeLight</code></summary>
@@ -602,16 +595,10 @@ class_id: `0`
 sizeof: `0xa60`  
 </details>
 <details>
-<summary><code>client_class CStatueProp</code></summary>
-
-class_id: `0`  
-sizeof: `0x16d0`  
-</details>
-<details>
 <summary><code>client_class CStatusEffectPlugin</code></summary>
 
 class_id: `0`  
-sizeof: `0xaa0`  
+sizeof: `0xac0`  
 </details>
 <details>
 <summary><code>client_class CTEBreakModel</code></summary>
@@ -785,7 +772,7 @@ sizeof: `0xa70`
 <summary><code>client_class CWeaponX</code></summary>
 
 class_id: `0`  
-sizeof: `0x67b0`  
+sizeof: `0x67e0`  
 </details>
 <details>
 <summary><code>client_class CWorld</code></summary>
@@ -822,12 +809,6 @@ sizeof: `0x1880`
 
 class_id: `0`  
 sizeof: `0x1880`  
-</details>
-<details>
-<summary><code>client_class Titan_Cockpit</code></summary>
-
-class_id: `0`  
-sizeof: `0x1840`  
 </details>
 ```
 
@@ -1119,6 +1100,18 @@ sizeof: `0x1840`
 	m_DmgRadius: Float,
 	m_grenadeStatusFlags: Int,
 	m_ziplineGrenadeExpectedEndPosition: Vector,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_BaseToggle extends DT_BaseEntity</code></summary>
+
+```
+{
+	m_vecFinalDest: Vector,
+	m_movementType: Int,
+	m_flMoveTargetTime: Time,
 }
 ```
 
@@ -1472,6 +1465,7 @@ sizeof: `0x1840`
 	m_localAngles: Vector,
 	m_Collision: DT_CollisionProperty,
 	m_CollisionGroup: Int,
+	m_phaseShiftFlags: Int,
 	m_parentAttachmentModel: Int,
 	m_fadeDist: Float,
 	m_nSkin: Int,
@@ -1510,6 +1504,19 @@ sizeof: `0x1840`
 	m_nColor: Int,
 	m_persistentWeaponEffect: Int,
 	m_iEffectName: Int,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_EmissiveScaleEvent</code></summary>
+
+```
+{
+	startTime: Float,
+	durRampUp: Float,
+	durPlateau: Float,
+	durRampDown: Float,
 }
 ```
 
@@ -2162,6 +2169,18 @@ sizeof: `0x1840`
 
 </details>
 <details>
+<summary><code>class DT_Missile extends DT_Projectile</code></summary>
+
+```
+{
+	m_hSpecificTarget: Int,
+	m_targetPosition: Vector,
+	m_useTargetPosition: Int,
+}
+```
+
+</details>
+<details>
 <summary><code>class DT_MovieDisplay extends DT_BaseEntity</code></summary>
 
 ```
@@ -2180,6 +2199,18 @@ sizeof: `0x1840`
 	m_flUMax: Float,
 	m_flVMin: Float,
 	m_flVMax: Float,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_NPC_Drone extends DT_AI_BaseNPC</code></summary>
+
+```
+{
+	m_bAttackTarget: Int,
+	m_scanTarget: Int,
+	m_beamSpread: Float,
 }
 ```
 
@@ -2466,7 +2497,7 @@ sizeof: `0x1840`
 	m_dragReviveState: Int,
 	m_dragReviveOutroStartTime: Float,
 	m_reviveTarget: Int,
-	m_duelTarget: Int,
+	m_akimboShouldAltFire: Int,
 }
 ```
 
@@ -2508,7 +2539,6 @@ sizeof: `0x1840`
 	attackRecoveryShouldBeQuick: Int,
 	isSprintAttack: Int,
 	attackStartTime: Time,
-	attackLastStartTime: Time,
 	attackHitEntity: Int,
 	attackHitEntityTime: Time,
 	attackLastHitNonWorldEntity: Time,
@@ -2526,6 +2556,19 @@ sizeof: `0x1840`
 ```
 {
 	m_nPlayerCond: Int,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_PlayerState</code></summary>
+
+```
+{
+	currentClass: BitMask,
+	requestedClass: BitMask,
+	onDeathClass: BitMask,
+	deadflag: Int,
 }
 ```
 
@@ -2710,6 +2753,31 @@ sizeof: `0x1840`
 
 </details>
 <details>
+<summary><code>class DT_Player_ViewOffsetEntityData</code></summary>
+
+```
+{
+	viewOffsetEntityHandle: Int,
+	lerpInDuration: Float,
+	lerpOutDuration: Float,
+	stabilizePlayerEyeAngles: Int,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_PointCamera extends DT_BaseEntity</code></summary>
+
+```
+{
+	m_FOV: Float,
+	m_bFogEnable: Int,
+	m_bActive: Int,
+}
+```
+
+</details>
+<details>
 <summary><code>class DT_PortalNonLocalPlayerExclusive</code></summary>
 
 ```
@@ -2736,6 +2804,17 @@ sizeof: `0x1840`
 	m_flRadius: Float,
 	m_flInnerRadius: Float,
 	m_flConeOfInfluence: Float,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_PostProcessController extends DT_BaseEntity</code></summary>
+
+```
+{
+	m_flPostProcessParameters: DataTable,
+	m_bMaster: Int,
 }
 ```
 
@@ -3236,20 +3315,6 @@ sizeof: `0x1840`
 
 </details>
 <details>
-<summary><code>class DT_StatueProp extends DT_PhysicsProp</code></summary>
-
-```
-{
-	m_hInitBaseAnimating: Int,
-	m_bShatter: Int,
-	m_nShatterFlags: Int,
-	m_vShatterPosition: Vector,
-	m_vShatterForce: Vector,
-}
-```
-
-</details>
-<details>
 <summary><code>class DT_StatusEffectEndlessData</code></summary>
 
 ```
@@ -3267,6 +3332,19 @@ sizeof: `0x1840`
 	m_hOwnerEntity: Int,
 	m_statusEffectsTimedPluginNV: DataTable,
 	m_statusEffectsEndlessPluginNV: DataTable,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_StatusEffectTimedData</code></summary>
+
+```
+{
+	seComboVars: Int,
+	seTimeEnd: Time,
+	seEaseOut: Float,
+	sePausedTimeRemaining: Time,
 }
 ```
 
@@ -3319,6 +3397,18 @@ sizeof: `0x1840`
 {
 	m_hVictim: Int,
 	m_attackDir: Vector,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_TEParticleSystem extends DT_BaseTempEntity</code></summary>
+
+```
+{
+	m_vecOrigin.x: Float,
+	m_vecOrigin.y: Float,
+	m_vecOrigin.z: Float,
 }
 ```
 
@@ -3604,6 +3694,18 @@ sizeof: `0x1840`
 
 </details>
 <details>
+<summary><code>class DT_TriggerSlip extends DT_BaseTrigger</code></summary>
+
+```
+{
+	m_defaultSlipDirection: Vector,
+	m_slipSpeed: Float,
+	m_slipAcceleration: Float,
+}
+```
+
+</details>
+<details>
 <summary><code>class DT_Turret extends DT_BaseAnimatingOverlay</code></summary>
 
 ```
@@ -3856,6 +3958,7 @@ sizeof: `0x1840`
 	m_energizedEndTime: Time,
 	m_heatValue: Float,
 	m_heatValueOnLastFire: Float,
+	m_fullyHeated: Int,
 	m_customActivity: Int,
 	m_customActivitySequence: Int,
 	m_customActivityOwner: Int,
@@ -3885,6 +3988,7 @@ sizeof: `0x1840`
 	m_scriptActivated: Int,
 	m_curReactiveSkinKillCount: Int,
 	m_curReactiveSkinKnockdownCount: Int,
+	m_emissiveEventData: DT_EmissiveScaleEvent,
 	m_attachmentIndices: DataTable,
 	m_lockedSet: Int,
 	m_isLoadoutPickup: Int,
@@ -3980,13 +4084,24 @@ sizeof: `0x1840`
 	m_ziplineAutoAttachEnabled: Int,
 	m_ziplineFadeDist: Float,
 	m_ziplineSpeedScale: Float,
-	m_ziplineFollowsPath: Int,
 	m_prevZipline: Int,
 	m_nextZipline: Int,
 	m_ziplinePhysics: DT_ZiplinePhysics,
 	m_ziplineMaterialIndex: Int,
 	m_ziplineRestPositions: DataTable,
 	m_numZiplineRestPositions: Int,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_ZiplineEnd extends DT_BaseEntity</code></summary>
+
+```
+{
+	m_autoDetachDistance: Float,
+	m_verticalPushOffInDirectionX: Int,
+	m_prevZipline: Int,
 }
 ```
 
@@ -4007,6 +4122,18 @@ sizeof: `0x1840`
 	m_attachedEntities: DataTable,
 	m_numAttachedEntities: Int,
 	m_ziplineOwner: Int,
+}
+```
+
+</details>
+<details>
+<summary><code>class DT_ZiplinePhysicsExlusive</code></summary>
+
+```
+{
+	m_nodes: DataTable,
+	m_numNodes: Int,
+	m_remainingUnsimulatedTime: Float,
 }
 ```
 
@@ -4360,6 +4487,7 @@ sizeof: `0x1840`
 	m_energizedEndTime: Time,
 	m_heatValue: Float,
 	m_heatValueOnLastFire: Float,
+	m_fullyHeated: Bool,
 	m_customActivity: Int,
 	m_customActivitySequence: Int,
 	m_customActivityOwner: EHANDLE,
@@ -4399,6 +4527,7 @@ sizeof: `0x1840`
 	m_scriptActivated: Bool,
 	m_curReactiveSkinKillCount: Char,
 	m_curReactiveSkinKnockdownCount: Char,
+	m_emissiveEventData: EmissiveScaleEventData,
 	m_attachmentIndices: Char,
 	m_flNextEmptySoundTime: Float,
 	m_bRemoveable: Bool,
@@ -5140,6 +5269,7 @@ sizeof: `0x1840`
 	m_updraftLiftAcceleration: Float,
 	m_updraftLiftExitDuration: Float,
 	m_updraftSlowTime: Time,
+	m_akimboShouldAltFire: Bool,
 }
 ```
 
@@ -5296,7 +5426,6 @@ sizeof: `0x1840`
 	m_projectileLifeTimeEndTick: Tick,
 	m_projectileCreationTime: Float,
 	m_isVortexRefired: Bool,
-	m_damageAliveOnly: Bool,
 	m_usesPositionFunction: Bool,
 	m_lastCollisionNormal: Vector,
 	m_bounceIndex: Int,
@@ -5538,6 +5667,19 @@ sizeof: `0x1840`
 
 </details>
 <details>
+<summary><code>class EmissiveScaleEventData</code></summary>
+
+```
+{
+	startTime: Float,
+	durRampUp: Float,
+	durPlateau: Float,
+	durRampDown: Float,
+}
+```
+
+</details>
+<details>
 <summary><code>class GrappleData</code></summary>
 
 ```
@@ -5591,7 +5733,6 @@ sizeof: `0x1840`
 	attackRecoveryShouldBeQuick: Bool,
 	isSprintAttack: Bool,
 	attackStartTime: Time,
-	attackLastStartTime: Time,
 	attackHitEntity: EHANDLE,
 	attackHitEntityTime: Time,
 	attackLastHitNonWorldEntity: Time,
@@ -6330,6 +6471,14 @@ default: `"1"`
 flags: `0x2002`  
 </details>
 <details>
+<summary><code>akimbo_weapon_can_zoom</code></summary>
+
+Can player zoom when dual wielding
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>allow_comms_filter</code></summary>
 
 enables cl_comms_filter
@@ -6926,7 +7075,7 @@ flags: `0x2`
 
 
 
-default: `"250"`  
+default: `"400"`  
 flags: `0x2`  
 </details>
 <details>
@@ -7215,6 +7364,14 @@ flags: `0x2`
 When in thirdperson and cam_collision is set to 1, an attempt is made to keep the camera from passing though walls.
 
 default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>cam_debug_collision</code></summary>
+
+
+
+default: `"0"`  
 flags: `0x2`  
 </details>
 <details>
@@ -8408,7 +8565,7 @@ flags: `0x80000`
 
 [LiveAPI] Use LiveAPI version 2.0
 
-default: `"0"`  
+default: `"1"`  
 flags: `0x80000`  
 </details>
 <details>
@@ -8416,7 +8573,7 @@ flags: `0x80000`
 
 [LiveAPI] Use bidirectional websocket layer
 
-default: `"0"`  
+default: `"1"`  
 flags: `0x80000`  
 </details>
 <details>
@@ -10098,7 +10255,7 @@ flags: `0x2`
 
 Use new chatserver (replaces lobby voice chat)
 
-default: `"0"`  
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -10275,14 +10432,6 @@ flags: `0x2`
 Communities should run it's frame update.
 
 default: `"1"`  
-flags: `0x2`  
-</details>
-<details>
-<summary><code>community_queryServerWhenOrphaned</code></summary>
-
-
-
-default: `"0"`  
 flags: `0x2`  
 </details>
 <details>
@@ -10862,6 +11011,14 @@ default: `"0"`
 flags: `0x200`  
 </details>
 <details>
+<summary><code>customMatch_liveapi</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>customMatch_playerToken</code></summary>
 
 
@@ -11102,6 +11259,14 @@ default: `"0"`
 flags: `0x80000`  
 </details>
 <details>
+<summary><code>devnet_client_log</code></summary>
+
+Set by devnet server. When it opens a log for clients.
+
+default: `"NotSet"`  
+flags: `0x202`  
+</details>
+<details>
 <summary><code>directlighting_debug</code></summary>
 
 1 - budget usage, 2 - light count per cell, 3 - attenuation check, 4 - cluster z coord
@@ -11231,6 +11396,14 @@ flags: `0x2`
 
 default: `"1"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>disable_zipline_in_oob_trigger</code></summary>
+
+Disallow ziplines from being placed inside of OOB triggers.
+
+default: `"1"`  
+flags: `0x2002`  
 </details>
 <details>
 <summary><code>discord_largeImage</code></summary>
@@ -11946,6 +12119,14 @@ default: `"0"`
 flags: `0x2002`  
 </details>
 <details>
+<summary><code>fastpatch_uiscript_reset</code></summary>
+
+Call uiscript_reset to reload patched GUI scripts.
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>fatal_error_signal_abort</code></summary>
 
 
@@ -12104,6 +12285,14 @@ flags: `0x40000002`
 
 default: `"1"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>fol_wind_speed_multiplier</code></summary>
+
+Global wind speed multiplier for client animation.
+
+default: `"1"`  
+flags: `0xa`  
 </details>
 <details>
 <summary><code>force3PLaserAttachment</code></summary>
@@ -15238,6 +15427,14 @@ default: `"0"`
 flags: `0x2002`  
 </details>
 <details>
+<summary><code>lobby_battlepass_milestone_enabled</code></summary>
+
+Enables the battle pass milestone page(this also disables the old popup)
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>lobby_cullNetEntities</code></summary>
 
 Cull networked entities while in lobby only.
@@ -15862,7 +16059,7 @@ flags: `0x2`
 
 The highest luminance value that is unaffected by the Frostbite tonemapper.
 
-default: `"0.25"`  
+default: `"0.5"`  
 flags: `0x2`  
 min value: `0`  
 </details>
@@ -16258,7 +16455,7 @@ min value: `1`
 
 Minimum luminance (to be shown as black) for the heatmap visualization.
 
-default: `"32"`  
+default: `"1"`  
 flags: `0x2`  
 min value: `1`  
 </details>
@@ -16872,6 +17069,14 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>match_datacenter</code></summary>
+
+Which datacenter we are running on
+
+default: `"west us"`  
+flags: `0x82000`  
+</details>
+<details>
 <summary><code>match_defaultMap_party</code></summary>
 
 Default map to load if the dedicated server is empty
@@ -16885,6 +17090,14 @@ flags: `0x2`
 What dir to look in for the matchmaking scripts
 
 default: `""`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>match_displayDatacenter</code></summary>
+
+If set to 0, display datacenter as selected, if else match location
+
+default: `"0"`  
 flags: `0x2`  
 </details>
 <details>
@@ -17401,6 +17614,30 @@ default: `"10"`
 flags: `0x80000`  
 </details>
 <details>
+<summary><code>mem_saving_vram_release_mb</code></summary>
+
+
+
+default: `"512"`  
+flags: `0x40000000`  
+</details>
+<details>
+<summary><code>mem_saving_vram_request_mb</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x40000000`  
+</details>
+<details>
+<summary><code>mem_saving_vram_trigger_mb</code></summary>
+
+
+
+default: `"256"`  
+flags: `0x40000000`  
+</details>
+<details>
 <summary><code>mem_test_each_frame</code></summary>
 
 Run heap check at end of every frame
@@ -17479,7 +17716,7 @@ flags: `0x2`
 
 Use 0 to disable CMetricHttp functionality.
 
-default: `"1"`  
+default: `"0"`  
 flags: `0x2`  
 </details>
 <details>
@@ -17552,7 +17789,23 @@ flags: `0x2`
 Number of audio channels, commonly 2(stereo), 6(5.1), 8(7.1). (0 is default)
 
 default: `"0"`  
-flags: `0x40000000`  
+flags: `0x80`  
+</details>
+<details>
+<summary><code>miles_channels_menuoption</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>miles_channels_menuoption_headphones</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
 </details>
 <details>
 <summary><code>miles_devnet_screenshot_attach_dump</code></summary>
@@ -17568,6 +17821,22 @@ flags: `0x2`
 Attach recent miles output sample file to each DevNet screenshot
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>miles_driver</code></summary>
+
+Options are 'wasapi' (default), 'xaudio2', 'directsound', 'wasapi_ss', 'null'
+
+default: `""`  
+flags: `0x80000`  
+</details>
+<details>
+<summary><code>miles_driver_mix_mode</code></summary>
+
+0 = auto, 1 = both indirect, 2 = both direct, 3 = direct upmixing
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -17763,6 +18032,22 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>miles_output_device</code></summary>
+
+empty = default
+
+default: `""`  
+flags: `0x80`  
+</details>
+<details>
+<summary><code>miles_recreate_on_default_changed</code></summary>
+
+Recreate driver when swapping devices with miles_output_device set to default
+
+default: `"1"`  
+flags: `0x80000`  
+</details>
+<details>
 <summary><code>miles_replay_transition_enable_early_cleanup</code></summary>
 
 
@@ -17824,6 +18109,14 @@ flags: `0x2`
 Scale all occlusion
 
 default: `"1.0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>miles_send_csom_telemetry</code></summary>
+
+
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -18448,7 +18741,7 @@ flags: `0x2002`
 
 
 
-default: `"1510"`  
+default: `"1600"`  
 flags: `0x2002`  
 </details>
 <details>
@@ -19082,6 +19375,22 @@ flags: `0x2`
 Print out stats of what packets we receive during the next process of sockets. Set to the enum of the socket you care about ie. NetSocketID_e
 
 default: `"-1"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>net_protocol_base</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>net_protocol_increment</code></summary>
+
+
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -19798,19 +20107,25 @@ default: `"0.25"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>orientation_matches_disabled</code></summary>
+
+Disables the Orientation Matches
+
+default: `"0"`  
+flags: `0x2012`  
+</details>
+<details>
 <summary><code>origin_Errorlevel_OldBehaviour</code></summary>
 
 Enables Setting errorlevel for as in the old code base did.
-
 
 default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
-<summary><code>origin_Errorlevel_Telementry</code></summary>
+<summary><code>origin_Errorlevel_Telemetry</code></summary>
 
 Enables sending host Telemetry event for Origin errorLevel
-
 
 default: `"1"`  
 flags: `0x2`  
@@ -19845,14 +20160,6 @@ flags: `0x2`
 Enable Origin HTTP debug logging (all HTTP queries and responses, token data etc.)
 
 default: `"0"`  
-flags: `0x2`  
-</details>
-<details>
-<summary><code>origin_disconnectWhenOffline</code></summary>
-
-
-
-default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -20441,11 +20748,27 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>perfcharts_heartbeat_force</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>perfcharts_heartbeat_interval</code></summary>
 
 Interval between sending telemetry samples aka heartbeats
 
 default: `"900"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>perfcharts_json_builder</code></summary>
+
+Use json builder utility instead of printf
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -20811,7 +21134,7 @@ flags: `0x80000202`
 <details>
 <summary><code>pin_sid</code></summary>
 
-session id
+Session ID
 
 default: `"unknown"`  
 flags: `0x80000200`  
@@ -21150,6 +21473,22 @@ flags: `0x41000200`
 
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>player_silence_listener_on_spectatee_swap</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>player_silence_on_spectatee_swap</code></summary>
+
+
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -22074,6 +22413,14 @@ default: `"1"`
 flags: `0x4000`  
 </details>
 <details>
+<summary><code>r_drawopaquestaticprops</code></summary>
+
+Toggle drawing of static props
+
+default: `"1"`  
+flags: `0x4000`  
+</details>
+<details>
 <summary><code>r_drawparticles</code></summary>
 
 Enable/disable particle rendering
@@ -22362,6 +22709,14 @@ flags: `0x2`
 
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>r_particle_emit_sound</code></summary>
+
+
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -23935,14 +24290,6 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
-<summary><code>server_query_interval</code></summary>
-
-
-
-default: `"0.5"`  
-flags: `0x2`  
-</details>
-<details>
 <summary><code>settings_field_lookup_doesnt_exist_is_fatal</code></summary>
 
 If GlobalSettingsField doesn't exist, then Script Error
@@ -24514,30 +24861,6 @@ default: `"0"`
 flags: `0x4000`  
 </details>
 <details>
-<summary><code>skill_arena</code></summary>
-
-The arena that skill should be read from / written to (eg. fnf, experimental, etc)
-
-default: `""`  
-flags: `0x2`  
-</details>
-<details>
-<summary><code>skill_dediOnly</code></summary>
-
-Only do skill for dedicated servers
-
-default: `"0"`  
-flags: `0x2`  
-</details>
-<details>
-<summary><code>skill_enabled</code></summary>
-
-
-
-default: `"1"`  
-flags: `0x2`  
-</details>
-<details>
 <summary><code>skill_hostname</code></summary>
 
 
@@ -24967,6 +25290,14 @@ flags: `0x1000000`
 
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>speechtotext_gettokentime_interval</code></summary>
+
+
+
+default: `"20"`  
 flags: `0x2`  
 </details>
 <details>
@@ -25756,6 +26087,14 @@ default: `"0"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>stream_cache_align_memory_estimates</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x40000000`  
+</details>
+<details>
 <summary><code>stream_cache_capacity_animseq</code></summary>
 
 Stream Cache Capacity in MiB
@@ -26336,6 +26675,14 @@ default: `"9990000"`
 flags: `0x26`  
 </details>
 <details>
+<summary><code>sv_fixedUpdateRate</code></summary>
+
+Do NOT let MP clients decide their update rate
+
+default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>sv_footsteps</code></summary>
 
 Play footstep sound for players
@@ -26567,6 +26914,22 @@ Client limit for party dedi only
 
 default: `"124"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>sv_partyFiringRangeJIPAllowed</code></summary>
+
+Whether the party JIP in Firing Range feature is allowed or not
+
+default: `"0"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>sv_partySpectatingAllowed</code></summary>
+
+Whether the party spectator feature is allowed or not
+
+default: `"0"`  
+flags: `0x2002`  
 </details>
 <details>
 <summary><code>sv_pausable</code></summary>
