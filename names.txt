@@ -7,9 +7,9 @@
 ## Miscellaneous
 
 ```
-TimeDateStamp = 0x63f51939
-CheckSum = 0x224725e
-GameVersion = "v3.0.27.29"
+TimeDateStamp = 0x63fea9ae
+CheckSum = 0x22484b9
+GameVersion = "v3.0.28.31"
 ```
 
 ## NetworkedStringTables
@@ -13330,7 +13330,7 @@ flags: `0x2002`
 
 
 
-default: `"1"`  
+default: `"0"`  
 flags: `0x2`  
 </details>
 <details>
@@ -20741,7 +20741,7 @@ flags: `0x2`
 
 
 
-default: `"2"`  
+default: `"3"`  
 flags: `0x2`  
 </details>
 <details>
@@ -24254,6 +24254,14 @@ flags: `0x4000`
 
 default: `"0"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>r_skin_skip_invalid_materials</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x40000000`  
 </details>
 <details>
 <summary><code>r_sky_ignoreAngles</code></summary>
@@ -35555,3 +35563,4 @@ flags: `0x40080000`
 
 flags: `0x40080000`  
 </details>
+
