@@ -7,9 +7,9 @@
 ## Miscellaneous
 
 ```
-TimeDateStamp = 0x64150a10
-CheckSum = 0x243d6a5
-GameVersion = "v3.0.29.33"
+TimeDateStamp = 0x642ad7e5
+CheckSum = 0x243f709
+GameVersion = "v3.0.30.36"
 ```
 
 ## NetworkedStringTables
@@ -6038,8 +6038,7 @@ sizeof: `0x1880`
 ## WeaponSettings
 
 ```
-fire_rate: Null
-fire_rate_max_time_cooldown: Null
+shortprintname: Null
 ```
 
 ## ConVars
@@ -19645,7 +19644,7 @@ flags: `0x2`
 
 Manual increment for net protocol
 
-default: `"4"`  
+default: `"5"`  
 flags: `0x2`  
 </details>
 <details>
@@ -26277,6 +26276,14 @@ flags: `0x2`
 Minimum size of prop to be drawn in static shadow
 
 default: `"40.0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>static_shadow_proplightweight_min_size</code></summary>
+
+Minimum size of proplightweight to be drawn in static shadow
+
+default: `"1500.0"`  
 flags: `0x2`  
 </details>
 <details>
