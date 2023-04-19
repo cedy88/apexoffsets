@@ -7,9 +7,9 @@
 ## Miscellaneous
 
 ```
-TimeDateStamp = 0x642ad7e5
-CheckSum = 0x243f709
-GameVersion = "v3.0.30.36"
+TimeDateStamp = 0x642f6f74
+CheckSum = 0x243db35
+GameVersion = "v3.0.31.53"
 ```
 
 ## NetworkedStringTables
@@ -6038,7 +6038,6 @@ sizeof: `0x1880`
 ## WeaponSettings
 
 ```
-shortprintname: Null
 ```
 
 ## ConVars
@@ -19644,7 +19643,7 @@ flags: `0x2`
 
 Manual increment for net protocol
 
-default: `"5"`  
+default: `"7"`  
 flags: `0x2`  
 </details>
 <details>
@@ -33676,13 +33675,6 @@ flags: `0x2000a`
 Throws an entity of the given model where the player is looking. Model must already be loaded.
 
 flags: `0x4008`  
-</details>
-<details>
-<summary><code>ping</code></summary>
-
-Display ping to server.
-
-flags: `0x6`  
 </details>
 <details>
 <summary><code>ping_specific_type</code></summary>
