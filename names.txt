@@ -7,9 +7,9 @@
 ## Miscellaneous
 
 ```
-TimeDateStamp = 0x642f6f74
-CheckSum = 0x243db35
-GameVersion = "v3.0.31.53"
+TimeDateStamp = 0x6450442d
+CheckSum = 0x23d010f
+GameVersion = "v3.0.32.18"
 ```
 
 ## NetworkedStringTables
@@ -49,6 +49,7 @@ arenas_tac_max_cooldown
 arrows_shatter_dmg_lv0
 arrows_shatter_dmg_lv3
 arrows_shatter_dmg_lv5
+auto_loader
 axiom_leap_ult_held
 barrel_stabilizer_l1
 barrel_stabilizer_l2
@@ -73,6 +74,7 @@ charge_lv2
 charge_lv3
 charge_lv4
 charge_lv5
+charged
 choke
 crate
 crypto_drone_access
@@ -96,7 +98,6 @@ fuse_long_throw_passive
 g7_reactive_ammo_counter_mod
 gold_paintball
 grapple_regen_stop
-has_been_energized
 heatwave
 highcal_mag_l1
 highcal_mag_l2
@@ -276,7 +277,7 @@ kbutton_t in_zoom;
 <summary><code>client_class CAI_BaseNPC</code></summary>
 
 class_id: `0`  
-sizeof: `0x1e10`  
+sizeof: `0x1e20`  
 </details>
 <details>
 <summary><code>client_class CAmbientGeneric</code></summary>
@@ -300,7 +301,7 @@ sizeof: `0x1980`
 <summary><code>client_class CBaseCombatCharacter</code></summary>
 
 class_id: `4`  
-sizeof: `0x1c50`  
+sizeof: `0x1c60`  
 </details>
 <details>
 <summary><code>client_class CBaseEntity</code></summary>
@@ -552,7 +553,7 @@ sizeof: `0x16b0`
 <summary><code>client_class CMaterialHarvester</code></summary>
 
 class_id: `46`  
-sizeof: `0x1700`  
+sizeof: `0x1690`  
 </details>
 <details>
 <summary><code>client_class CMissile</code></summary>
@@ -570,25 +571,25 @@ sizeof: `0xbc0`
 <summary><code>client_class CNPC_Drone</code></summary>
 
 class_id: `49`  
-sizeof: `0x1e30`  
+sizeof: `0x1e40`  
 </details>
 <details>
 <summary><code>client_class CNPC_Dropship</code></summary>
 
 class_id: `50`  
-sizeof: `0x1e40`  
+sizeof: `0x1e50`  
 </details>
 <details>
 <summary><code>client_class CNPC_SentryTurret</code></summary>
 
 class_id: `51`  
-sizeof: `0x1e30`  
+sizeof: `0x1e40`  
 </details>
 <details>
 <summary><code>client_class CNPC_Titan</code></summary>
 
 class_id: `52`  
-sizeof: `0x1eb0`  
+sizeof: `0x1ec0`  
 </details>
 <details>
 <summary><code>client_class CParticleSystem</code></summary>
@@ -606,7 +607,7 @@ sizeof: `0x16a0`
 <summary><code>client_class CPlayer</code></summary>
 
 class_id: `55`  
-sizeof: `0x48d0`  
+sizeof: `0x48e0`  
 </details>
 <details>
 <summary><code>client_class CPlayerDecoy</code></summary>
@@ -954,7 +955,7 @@ sizeof: `0xa70`
 <summary><code>client_class CWeaponX</code></summary>
 
 class_id: `113`  
-sizeof: `0x6820`  
+sizeof: `0x6800`  
 </details>
 <details>
 <summary><code>client_class CWorld</code></summary>
@@ -1151,6 +1152,9 @@ sizeof: `0x1880`
 	m_deathVelocity: Vector,
 	m_minimapData: DT_MinimapBaseEntityData,
 	m_nameVisibilityFlags: Int,
+	m_bIsPlayerOverheating: Int,
+	m_playerOverheatValue: Float,
+	m_timeLastGeneratedPlayerOverheat: Time,
 	m_lastFiredTime: Time,
 	m_lastFiredWeapon: Int,
 	m_raiseFromMeleeEndTime: Time,
@@ -2154,6 +2158,7 @@ sizeof: `0x1880`
 	m_jetDriveInDecelWindow: Int,
 	m_jetDriveTimeout: Float,
 	m_jetDriveDoubleJumpVelocity: Vector,
+	m_playerLaunchVelocity: Vector,
 	m_slowMoEnabled: Int,
 	m_sliding: Int,
 	m_slideLongJumpAllowed: Int,
@@ -2277,9 +2282,9 @@ sizeof: `0x1880`
 	m_skywardDeployEndTime: Float,
 	m_skywardDeploySpeed: Float,
 	m_skywardOffsetSpeed: Float,
-	m_twitchRewardBits: BitMask,
 	m_twitchDropsInitialized: Int,
-	m_twitchDropsBits: BitMask,
+	m_amazonPrimeBits: DataTable,
+	m_twitchDropsBits: DataTable,
 	m_playerKnockBacks: DataTable,
 	m_updraftCount: Int,
 	m_updraftStage: Int,
@@ -2450,6 +2455,7 @@ sizeof: `0x1880`
 	m_killForReplay: Int,
 	m_enemyControlPoint: Int,
 	m_enemyControlPointOverride: Int,
+	m_bLOSBlockScan: Int,
 	m_vServerControlPoints: DataTable,
 	m_hControlPointEnts: DataTable,
 	m_controlPointAttachTypes: DataTable,
@@ -4085,7 +4091,6 @@ sizeof: `0x1880`
 	m_curReactiveSkinKillCount: Int,
 	m_curReactiveSkinKnockdownCount: Int,
 	m_emissiveEventData: DT_EmissiveScaleEvent,
-	m_attachmentIndices: DataTable,
 	m_lockedSet: Int,
 	m_isLoadoutPickup: Int,
 	m_utilityEnt: Int,
@@ -4630,7 +4635,6 @@ sizeof: `0x1880`
 	m_curReactiveSkinKillCount: Char,
 	m_curReactiveSkinKnockdownCount: Char,
 	m_emissiveEventData: EmissiveScaleEventData,
-	m_attachmentIndices: Char,
 	m_flNextEmptySoundTime: Float,
 	m_bRemoveable: Bool,
 }
@@ -4705,6 +4709,9 @@ sizeof: `0x1880`
 	m_currentFrame.showActiveWeapon3p: Bool,
 	m_deathVelocity: Float,
 	m_phaseShiftFlags: Int,
+	m_bIsPlayerOverheating: Bool,
+	m_playerOverheatValue: Float,
+	m_timeLastGeneratedPlayerOverheat: Time,
 	m_flNextAttack: Time,
 	m_lastFiredTime: Time,
 	m_lastFiredWeapon: EHANDLE,
@@ -5209,6 +5216,7 @@ sizeof: `0x1880`
 	m_jetDriveInDecelWindow: Bool,
 	m_jetDriveTimeout: Float,
 	m_jetDriveDoubleJumpVelocity: Vector,
+	m_playerLaunchVelocity: Vector,
 	m_grapple: GrappleData,
 	m_grapple: GrappleData,
 	m_grappleActive: Bool,
@@ -6038,6 +6046,7 @@ sizeof: `0x1880`
 ## WeaponSettings
 
 ```
+fire_rate: Null
 ```
 
 ## ConVars
@@ -6087,6 +6096,14 @@ flags: `0x2`
 
 default: `"2"`  
 flags: `0x2002`  
+</details>
+<details>
+<summary><code>ClientPakFile_scriptFakeDelay</code></summary>
+
+Fake delay added by script to each Pak load request
+
+default: `"0"`  
+flags: `0x2`  
 </details>
 <details>
 <summary><code>Clubs_AllowMalformedTags</code></summary>
@@ -6359,7 +6376,7 @@ flags: `0x2`
 
 
 
-default: `"0"`  
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -8661,6 +8678,23 @@ default: `"0"`
 flags: `0x80000`  
 </details>
 <details>
+<summary><code>cl_liveapi_requests_psk</code></summary>
+
+[LiveAPI] A preshared key that will be used to validate requests. When set, if a request is received that does not match, it is rejected
+
+default: `""`  
+flags: `0x80000`  
+</details>
+<details>
+<summary><code>cl_liveapi_requests_psk_tries</code></summary>
+
+[LiveAPI] Attempts allowed when making a request with the wrong key before the connection is dropped.
+
+default: `"10"`  
+flags: `0x80000`  
+min value: `10`  
+</details>
+<details>
 <summary><code>cl_liveapi_spectator_only</code></summary>
 
 [LiveAPI] Spectator only (dev mode only)
@@ -8672,14 +8706,6 @@ flags: `0x2`
 <summary><code>cl_liveapi_use_protobuf</code></summary>
 
 [LiveAPI] Use protobuf as the serialization format. Otherwise, use JSON.
-
-default: `"1"`  
-flags: `0x80000`  
-</details>
-<details>
-<summary><code>cl_liveapi_use_v2</code></summary>
-
-[LiveAPI] Use LiveAPI version 2.0
 
 default: `"1"`  
 flags: `0x80000`  
@@ -8701,11 +8727,27 @@ default: `"1"`
 flags: `0x80000`  
 </details>
 <details>
+<summary><code>cl_liveapi_ws_event_delay</code></summary>
+
+[LiveAPI] Delay to be used when broadcasting an event
+
+default: `""`  
+flags: `0x80000`  
+</details>
+<details>
 <summary><code>cl_liveapi_ws_keepalive</code></summary>
 
 [LiveAPI] Interval of time to send Pong to any connected server
 
 default: `"30"`  
+flags: `0x80000`  
+</details>
+<details>
+<summary><code>cl_liveapi_ws_lax_ssl</code></summary>
+
+[LiveAPI] Skip SSL certificate validation for all connections. Allows the use of self-signed certificates
+
+default: `"1"`  
 flags: `0x80000`  
 </details>
 <details>
@@ -11062,6 +11104,14 @@ default: `"2"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>cups_enabled</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>curl_allowHTTPS</code></summary>
 
 
@@ -11422,7 +11472,7 @@ default: `"NotSet"`
 flags: `0x2002`  
 </details>
 <details>
-<summary><code>devnet_keepalive</code></summary>
+<summary><code>devnet_http_keepalive</code></summary>
 
 HTTP: whether keep alive should be used
 
@@ -11440,21 +11490,29 @@ flags: `0x2002`
 <details>
 <summary><code>devnet_retry_time</code></summary>
 
-Base power (e.g., x^y) time between retries in seconds
+Time between retries in seconds
 
 default: `"2"`  
 flags: `0x2002`  
+</details>
+<details>
+<summary><code>devnet_send_dump_files</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
 </details>
 <details>
 <summary><code>devnet_timeout</code></summary>
 
 Connection timeout in seconds
 
-default: `"360"`  
+default: `"450"`  
 flags: `0x2002`  
 </details>
 <details>
-<summary><code>devnet_wss_keepalive</code></summary>
+<summary><code>devnet_wss_keepalive_time</code></summary>
 
 Web Socket interval of time to send Ping to any connected server in seconds
 
@@ -11933,7 +11991,7 @@ flags: `0x2`
 
 GPU frametime threshold above which DVS will start decreasing the scale. Specified in microseconds.
 
-default: `"16500"`  
+default: `""`  
 flags: `0x2`  
 </details>
 <details>
@@ -11941,7 +11999,7 @@ flags: `0x2`
 
 GPU frametime threshold below which DVS will start increasing the scale. Specified in microseconds.
 
-default: `"15000"`  
+default: `""`  
 flags: `0x2`  
 </details>
 <details>
@@ -12075,6 +12133,14 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>eadp_friend_filter_invalid</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>eadp_friend_use_ctid</code></summary>
 
 
@@ -12179,20 +12245,20 @@ default: `"0"`
 flags: `0x2`  
 </details>
 <details>
-<summary><code>enable_new_weapon_attachment_system</code></summary>
-
-using new weapon attachment system rather than body groups
-
-default: `"0"`  
-flags: `0x2002`  
-</details>
-<details>
 <summary><code>enable_non_fatal_error_reports</code></summary>
 
 If disabled, will turn off non-fatal error reports being sent to devnet or backtrace
 
 default: `"1"`  
 flags: `0x80000`  
+</details>
+<details>
+<summary><code>enable_script_string_cache</code></summary>
+
+Allow calls to PrecacheScriptString to alter the String table
+
+default: `"1"`  
+flags: `0x2`  
 </details>
 <details>
 <summary><code>enable_skeleton_draw</code></summary>
@@ -12209,6 +12275,14 @@ Render skeletons in wireframe for a single entity
 
 default: `"0"`  
 flags: `0x4000`  
+</details>
+<details>
+<summary><code>enable_tokenized_localization_files</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
 </details>
 <details>
 <summary><code>enable_uninitialized_netvar_crashes</code></summary>
@@ -18059,6 +18133,14 @@ default: `"0"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>miles_client_enable_radius_culling</code></summary>
+
+Cull certain client-emitted sounds depending on their radii
+
+default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>miles_devnet_screenshot_attach_dump</code></summary>
 
 Attach miles dump file to each DevNet screenshot
@@ -18153,6 +18235,14 @@ When 1, sound is paused and incoming play events are ignored.
 
 default: `"0"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>miles_init_null_fallback</code></summary>
+
+Start with null driver if driver creation fails (allows game to boot with no sound devices)
+
+default: `"1"`  
+flags: `0x80000`  
 </details>
 <details>
 <summary><code>miles_initial_occlusion_delay</code></summary>
@@ -18291,6 +18381,14 @@ default: `""`
 flags: `0x80`  
 </details>
 <details>
+<summary><code>miles_radius_cull_fudge_factor_speed</code></summary>
+
+Radius culling allows sounds to play if the listener could reach them running at their sprint speed * this factor
+
+default: `"2.0"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>miles_recreate_on_default_changed</code></summary>
 
 Recreate driver when swapping devices with miles_output_device set to default
@@ -18421,9 +18519,9 @@ flags: `0x2`
 <details>
 <summary><code>miles_soundscape_skipfloors_mode</code></summary>
 
-Determines how many floors to skip, max(listenerFloorSkip, eventFloorSkip), mode 1=min(listenerFloorSkip, eventFloorSkip) logic, and mode 2=just listenerFloorSkip
+Determines how many floors to skip: 0 = max(listenerFloorSkip, eventFloorSkip), 1 = min(listenerFloorSkip, eventFloorSkip) logic, 2 = just listenerFloorSkip. mode 3 requires both listener and emitter to be within the same soundscape volume to apply floor skip
 
-default: `"1"`  
+default: `"3"`  
 flags: `0x2`  
 </details>
 <details>
@@ -18997,11 +19095,51 @@ default: `"14"`
 flags: `0x2002`  
 </details>
 <details>
+<summary><code>mtx_purchaseBPLevelsWithLegendTokensEnabled</code></summary>
+
+Allow purchasing battle pass levels using legend tokens feature to be enabled/disabled.
+
+default: `"0"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>mtx_purchaseBPLevelsWithLegendTokensEndDaysOffset</code></summary>
+
+End date of purchasing battle pass levels using legend tokens as an offset from the end of the season.
+
+default: `"10"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>mtx_purchaseBPLevelsWithLegendTokensLimit</code></summary>
+
+Max battle pass levels your account can purchase using legend tokens.
+
+default: `"20"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>mtx_purchaseBPLevelsWithLegendTokensMinLevel</code></summary>
+
+Minimum battle pass level your account needs to be to purchase battle pass levels using legend tokens.
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>mtx_purchaseBPLevelsWithLegendTokensStartDaysOffset</code></summary>
+
+Start date of purchasing battle pass levels using legend tokens as an offset from the start of the season.
+
+default: `"10"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>mtx_svEdition</code></summary>
 
 
 
-default: `"1610"`  
+default: `"1700"`  
 flags: `0x2002`  
 </details>
 <details>
@@ -19137,7 +19275,7 @@ flags: `0x2`
 
 Oodle compression algorithm tunable.
 
-default: `"9"`  
+default: `"4"`  
 flags: `0x2`  
 </details>
 <details>
@@ -19643,7 +19781,7 @@ flags: `0x2`
 
 Manual increment for net protocol
 
-default: `"7"`  
+default: `"8"`  
 flags: `0x2`  
 </details>
 <details>
@@ -20212,7 +20350,7 @@ flags: `0x2`
 
 Delay frames when capturing the lobby to allow texture streaming to finish
 
-default: `"30"`  
+default: `"5"`  
 flags: `0x4000`  
 </details>
 <details>
@@ -20579,6 +20717,14 @@ flags: `0x2`
 
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>particle_los_blockscan_enabled</code></summary>
+
+
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -21011,6 +21157,14 @@ flags: `0x2`
 Interval between sending telemetry samples aka heartbeats
 
 default: `"900"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>perfcharts_io_metrics_verbosity</code></summary>
+
+0 = Normalized only 1 = Full & Normalized
+
+default: `"0"`  
 flags: `0x2`  
 </details>
 <details>
@@ -21676,6 +21830,38 @@ flags: `0x2002`
 
 default: `"50"`  
 flags: `0x6000`  
+</details>
+<details>
+<summary><code>player_overheat_cooldown_delay</code></summary>
+
+
+
+default: `"2.0f"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>player_overheat_cooldown_time</code></summary>
+
+
+
+default: `"10.0f"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>player_overheat_rechamber_time_multiplier</code></summary>
+
+
+
+default: `"0.5f"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>player_overheat_time_to_overheat</code></summary>
+
+
+
+default: `"1.33f"`  
+flags: `0x2002`  
 </details>
 <details>
 <summary><code>player_respawnInputDebounceDuration</code></summary>
@@ -22824,6 +23010,22 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>r_jobified_build_particle_list</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>r_jobify_update_dummies</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>r_lightmap</code></summary>
 
 
@@ -23533,6 +23735,54 @@ default: `"5"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>ranked_current_period_guidstring</code></summary>
+
+ItemFlavor GUIDString for current active ranked period.
+
+default: `"SAID01711148254"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>ranked_current_period_start_score</code></summary>
+
+LP value sent to Stryder that players are reset to at season start.
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>ranked_disable_full_bonus_system</code></summary>
+
+Bonus System - disable the entire bonus system.
+
+default: `""`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>ranked_disable_placement_matches</code></summary>
+
+Placement Matches - disable placement matches and all its UI.
+
+default: `""`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>ranked_disable_point_gain</code></summary>
+
+Point Gains - disable point awarding.
+
+default: `""`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>ranked_enable_old_kill_bonus</code></summary>
+
+EnableOldKillBonus - enable 10 LP per kill and disable elimination bonus.
+
+default: `""`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>rankedplay_display_enabled</code></summary>
 
 
@@ -24053,6 +24303,14 @@ default: `"0"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>rtk_enableLaserScreen</code></summary>
+
+Enable RTK version of LaserScreen, otherwise VGUI version is used
+
+default: `"0"`  
+flags: `0x80000`  
+</details>
+<details>
 <summary><code>rtk_enableStatsScreen</code></summary>
 
 Enable RTK version of StatsScreen, otherwise VGUI version is used
@@ -24447,14 +24705,6 @@ default: `"0"`
 flags: `0x2`  
 </details>
 <details>
-<summary><code>script_seasonNameQueryInterval</code></summary>
-
-
-
-default: `"600"`  
-flags: `0x2`  
-</details>
-<details>
 <summary><code>script_showErrorDialogs</code></summary>
 
 
@@ -24495,6 +24745,14 @@ default: `"0"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>scriptremotefunctions_dropNullEntity</code></summary>
+
+Drop calls when replicating null entities
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>scriptremotefunctions_printReconnectDiscards</code></summary>
 
 Print instances where we discard remote calls on players who are in reconnect state
@@ -24507,7 +24765,7 @@ flags: `0x2`
 
 Enable extra warnings when replicating null entities
 
-default: `"0"`  
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -24682,6 +24940,14 @@ flags: `0x2`
 <summary><code>shadow_cull_in_lobby</code></summary>
 
 Allow culling of any kind of shadow when in the lobby, if it's outside of the view frustum.
+
+default: `"1"`  
+flags: `0x4000`  
+</details>
+<details>
+<summary><code>shadow_cull_renderables_by_dist</code></summary>
+
+If enabled, shadows will use their maximum distance/radius to cull renderables before rendering.
 
 default: `"1"`  
 flags: `0x4000`  
@@ -24887,6 +25153,14 @@ default: `"1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>shadow_pack_pvs_arrays</code></summary>
+
+Pack the Shadow PVS bitsets into arrays of indices to save memory.
+
+default: `"1"`  
+flags: `0x4000`  
+</details>
+<details>
 <summary><code>shadow_pcf_bias</code></summary>
 
 How much to bias shadow samples to prevent aliasing
@@ -24913,7 +25187,7 @@ default: `"0"`
 flags: `0x4000`  
 </details>
 <details>
-<summary><code>shadow_show_spot_udpate_infos</code></summary>
+<summary><code>shadow_show_spot_update_infos</code></summary>
 
 
 
@@ -25095,6 +25369,14 @@ flags: `0x2`
 
 default: `"0"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>showio_enabled</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x80000`  
 </details>
 <details>
 <summary><code>showmem_enabled</code></summary>
@@ -26270,6 +26552,14 @@ default: `"0.1"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>static_shadow_max_partitions</code></summary>
+
+When there are too many props, initial static shadow generation may take this many frames.
+
+default: `"16"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>static_shadow_prop_min_size</code></summary>
 
 Minimum size of prop to be drawn in static shadow
@@ -26324,6 +26614,14 @@ flags: `0x2`
 
 default: `""`  
 flags: `0x80000`  
+</details>
+<details>
+<summary><code>stationary_fly_ground_detect</code></summary>
+
+
+
+default: `"1"`  
+flags: `0x2002`  
 </details>
 <details>
 <summary><code>stats_hostname</code></summary>
@@ -27252,14 +27550,6 @@ default: `"1"`
 flags: `0x2002`  
 </details>
 <details>
-<summary><code>sv_partySpectatingAllowed</code></summary>
-
-Whether the party spectator feature is allowed or not
-
-default: `"1"`  
-flags: `0x2002`  
-</details>
-<details>
 <summary><code>sv_pausable</code></summary>
 
 Whether the server is allowed to pause
@@ -27513,6 +27803,22 @@ flags: `0x2`
 
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>sv_snapshot_tempent_warn_threshold</code></summary>
+
+-1 = max. 0 = disabled
+
+default: `"-1"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>sv_snapshot_tempent_warn_throttle</code></summary>
+
+
+
+default: `"30"`  
 flags: `0x2`  
 </details>
 <details>
@@ -28627,6 +28933,14 @@ flags: `0x2`
 
 default: `"220 215 210 255"`  
 flags: `0x2`  
+</details>
+<details>
+<summary><code>use_eadp_shorthash</code></summary>
+
+Hash the Nucleus ID to its short version (32 chars) instead of the long version (128 chars).
+
+default: `"1"`  
+flags: `0x80000`  
 </details>
 <details>
 <summary><code>use_latest_predicted_time_for_calc_anim_position</code></summary>
@@ -30265,6 +30579,14 @@ default: `"0"`
 flags: `0x2002`  
 </details>
 <details>
+<summary><code>weapon_check_custom_client_cmd</code></summary>
+
+Check customWeaponActivityCmd inputs against server allow list.
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>weapon_debugScript</code></summary>
 
 
@@ -30377,7 +30699,23 @@ default: `"0.5 0.5 0.5"`
 flags: `0x2`  
 </details>
 <details>
+<summary><code>wind_draw_dir</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
 <summary><code>wind_draw_emitters</code></summary>
+
+
+
+default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>wind_draw_overlap_only</code></summary>
 
 
 
@@ -30390,6 +30728,14 @@ flags: `0x2`
 
 
 default: `"0"`  
+flags: `0x2`  
+</details>
+<details>
+<summary><code>wind_enabled</code></summary>
+
+Enable/disable wind (foliage animation and particles effects).
+
+default: `"1"`  
 flags: `0x2`  
 </details>
 <details>
@@ -30444,6 +30790,14 @@ flags: `0x2`
 <summary><code>wind_speed_multiplier</code></summary>
 
 Global wind speed multiplier for client animation.
+
+default: `"1"`  
+flags: `0xa`  
+</details>
+<details>
+<summary><code>wind_speed_multiplier_fx</code></summary>
+
+FX-only wind speed multiplier for client animation.
 
 default: `"1"`  
 flags: `0xa`  
@@ -32841,39 +33195,11 @@ Shows the game UI
 flags: `0x40000000`  
 </details>
 <details>
-<summary><code>gameui_allowescape</code></summary>
-
-Escape key allowed to hide game UI
-
-flags: `0x40000000`  
-</details>
-<details>
-<summary><code>gameui_allowescapetoshow</code></summary>
-
-Escape key allowed to show game UI
-
-flags: `0x2`  
-</details>
-<details>
 <summary><code>gameui_hide</code></summary>
 
 Hides the game UI
 
 flags: `0x40000000`  
-</details>
-<details>
-<summary><code>gameui_preventescape</code></summary>
-
-Escape key doesn't hide game UI
-
-flags: `0x40000000`  
-</details>
-<details>
-<summary><code>gameui_preventescapetoshow</code></summary>
-
-Escape key doesn't show game UI
-
-flags: `0x2`  
 </details>
 <details>
 <summary><code>getNewAuthToken</code></summary>
