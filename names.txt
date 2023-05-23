@@ -7,9 +7,9 @@
 ## Miscellaneous
 
 ```
-TimeDateStamp = 0x6450442d
-CheckSum = 0x23d010f
-GameVersion = "v3.0.32.18"
+TimeDateStamp = 0x645d3f80
+CheckSum = 0x23cfa8b
+GameVersion = "v3.0.33.21"
 ```
 
 ## NetworkedStringTables
@@ -6046,7 +6046,7 @@ sizeof: `0x1880`
 ## WeaponSettings
 
 ```
-fire_rate: Null
+printname: Vector
 ```
 
 ## ConVars
@@ -19095,6 +19095,14 @@ default: `"14"`
 flags: `0x2002`  
 </details>
 <details>
+<summary><code>mtx_kickPlayersWhoFailRewardSequenceValidation</code></summary>
+
+If we detected a mismatch between persistence & marketplace - likely an exploit - should we kick the player.
+
+default: `"1"`  
+flags: `0x2002`  
+</details>
+<details>
 <summary><code>mtx_purchaseBPLevelsWithLegendTokensEnabled</code></summary>
 
 Allow purchasing battle pass levels using legend tokens feature to be enabled/disabled.
@@ -19140,6 +19148,14 @@ flags: `0x2002`
 
 
 default: `"1700"`  
+flags: `0x2002`  
+</details>
+<details>
+<summary><code>mtx_verifyMarketplaceRewardSequenceAgainstPersistence</code></summary>
+
+Verify that Persistence value & Marketplace value for RewardSeq matches - prevents account exploit.
+
+default: `"1"`  
 flags: `0x2002`  
 </details>
 <details>
@@ -19781,7 +19797,7 @@ flags: `0x2`
 
 Manual increment for net protocol
 
-default: `"8"`  
+default: `"10"`  
 flags: `0x2`  
 </details>
 <details>
