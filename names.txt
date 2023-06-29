@@ -31,6 +31,191 @@ localize
 ## ModifierNames
 
 ```
+MP_BASE
+PVE_BASE
+SP_BASE
+ability_active_mod
+ability_in_effect_regen_paused
+ability_used_mod
+alt_ammo
+altfire
+altfire_double_tap
+altfire_highcal
+ammo_type_swap
+amped_damage
+amped_damage_alt
+amped_tacticals
+arenas_tac_max_cooldown
+arrows_shatter_dmg_lv0
+arrows_shatter_dmg_lv3
+arrows_shatter_dmg_lv5
+auto_loader
+axiom_leap_ult_held
+barrel_stabilizer_l1
+barrel_stabilizer_l2
+barrel_stabilizer_l3
+barrel_stabilizer_l4_flash_hider
+beacon_1
+beacon_2
+beacon_3
+beacon_4
+beacon_5
+beacon_6
+blue_paintball
+breacher
+bullets_mag_l1
+bullets_mag_l2
+bullets_mag_l3
+bullets_mag_l4
+burn_card_weapon_mod
+burn_mod_grenade_electric_smoke
+charge_lv1
+charge_lv2
+charge_lv3
+charge_lv4
+charge_lv5
+charged
+choke
+crate
+crypto_drone_access
+crypto_has_camera
+cupid
+data_knife
+dev_mod_low_recharge
+disable_lunge
+double_link_mod
+drill_error
+elevator_shooter
+energized
+energy_mag_l1
+energy_mag_l2
+energy_mag_l3
+energy_mag_l4
+extra_tactical_charges
+fast_reload_mod
+fully_heated
+fuse_long_throw_passive
+g7_reactive_ammo_counter_mod
+gold_paintball
+grapple_regen_stop
+heatwave
+highcal_mag_l1
+highcal_mag_l2
+highcal_mag_l3
+highcal_mag_l4
+hopup_april_fools
+hopup_april_fools_energy
+hopup_april_fools_heavy
+hopup_april_fools_light
+hopup_april_fools_sniper
+hopup_double_tap
+hopup_dual_loader
+hopup_energy_choke
+hopup_headshot_dmg
+hopup_highcal_rounds
+hopup_kinetic_choke
+hopup_kinetic_loader
+hopup_marksmans_tempo
+hopup_multiplexer
+hopup_quickdraw_holster
+hopup_shatter_rounds
+hopup_shield_breaker
+hopup_smart_reload
+hopup_turbocharger
+hopup_unshielded_dmg
+in_ads
+infinite_ammo_clips
+interception_pylon_super_charge
+kinetic_choke
+laser_sight_l1
+laser_sight_l2
+laser_sight_l3
+legendary1
+legendary2
+legendary_nrg_crys_muzzle_flash
+legendary_nrg_crys_reactive_charge
+legendary_nrg_grn_muzzle_flash
+legendary_nrg_grn_reactive_charge
+legendary_nrg_ice_muzzle_flash
+legendary_nrg_ice_reactive_charge
+marksmans_tempo_active
+marksmans_tempo_buildup
+mobile_hmg_active
+mobile_hmg_fast_switch
+mortar_ring_arc_disabled_mod
+mortar_ring_target_blocked_mod
+newcastle_ult_leap_dash_mod
+newcastle_ult_leap_launch_mod
+newcastle_ult_leap_slam_mod
+npc_shotgunner
+npc_stalker
+optic_cq_hcog_bruiser
+optic_cq_hcog_classic
+optic_cq_holosight
+optic_cq_holosight_variable
+optic_cq_threat
+optic_ranged_aog_variable
+optic_ranged_hcog
+optic_sniper
+optic_sniper_threat
+optic_sniper_variable
+optic_toggle
+overloaded_ammo
+pariah_ads_melee
+pas_ordnance_pack
+pas_power_cell
+proto_door_kick
+purple_paintball
+rampart_gunner
+redirect_mod
+s07_reactive_holo_ironsight
+s07_reactive_holo_ironsight_alt
+s17cr_p0_cooldown_mod
+s17cr_p1_cooldown_mod
+s17cr_p2_cooldown_mod
+seer_heartbeat_sensor_active
+seer_passive_throwingknife
+seer_tac_movespeed_modifier
+shatter_rounds_hipfire
+shotgun_bolt_l1
+shotgun_bolt_l1_double_tap
+shotgun_bolt_l2
+shotgun_bolt_l2_double_tap
+shotgun_bolt_l3
+shotgun_bolt_l3_double_tap
+shotgun_bolt_l4
+shotgun_bolt_l4_double_tap
+sniper_mag_l1
+sniper_mag_l2
+sniper_mag_l3
+sniper_mag_l4
+sp_disable_arc_indicator
+spree_lvl1_grenade_smoke
+spree_lvl2_grenade_smoke
+spree_lvl3_grenade_smoke
+std_charge_dmg_lv1
+std_charge_dmg_lv2
+std_charge_dmg_lv3
+std_charge_dmg_lv4
+std_charge_dmg_lv5
+stock_sniper_l1
+stock_sniper_l2
+stock_sniper_l3
+stock_tactical_l1
+stock_tactical_l2
+stock_tactical_l3
+survival_ammo_regen_paused
+survival_ammo_regen_staging
+survival_armor_cooldown_mod
+survival_finite_ordnance
+ult_active
+ultimate_active
+ultimate_active_no_regen
+ultimates_charge_over_time_disabled
+using_jets
+vantage_ads_melee
+vertical_firestar_disabled
+vkp
 ```
 
 ## Buttons
@@ -100,685 +285,685 @@ sizeof: `0x1e10`
 <details>
 <summary><code>client_class CAmbientGeneric</code></summary>
 
-class_id: `0`  
+class_id: `1`  
 sizeof: `0xad0`  
 </details>
 <details>
 <summary><code>client_class CBaseAnimating</code></summary>
 
-class_id: `0`  
+class_id: `2`  
 sizeof: `0x1630`  
 </details>
 <details>
 <summary><code>client_class CBaseAnimatingOverlay</code></summary>
 
-class_id: `0`  
+class_id: `3`  
 sizeof: `0x1970`  
 </details>
 <details>
 <summary><code>client_class CBaseCombatCharacter</code></summary>
 
-class_id: `0`  
+class_id: `4`  
 sizeof: `0x1c50`  
 </details>
 <details>
 <summary><code>client_class CBaseEntity</code></summary>
 
-class_id: `0`  
+class_id: `5`  
 sizeof: `0xa60`  
 </details>
 <details>
 <summary><code>client_class CBaseGrenade</code></summary>
 
-class_id: `0`  
+class_id: `6`  
 sizeof: `0x2f00`  
 </details>
 <details>
 <summary><code>client_class CBaseTempEntity</code></summary>
 
-class_id: `0`  
+class_id: `7`  
 sizeof: `0x28`  
 </details>
 <details>
 <summary><code>client_class CBaseToggle</code></summary>
 
-class_id: `0`  
+class_id: `8`  
 sizeof: `0xa90`  
 </details>
 <details>
 <summary><code>client_class CBaseTrigger</code></summary>
 
-class_id: `0`  
+class_id: `9`  
 sizeof: `0xaa0`  
 </details>
 <details>
 <summary><code>client_class CBaseVPhysicsTrigger</code></summary>
 
-class_id: `0`  
+class_id: `11`  
 sizeof: `0xa70`  
 </details>
 <details>
 <summary><code>client_class CBaseViewModel</code></summary>
 
-class_id: `0`  
+class_id: `10`  
 sizeof: `0x4f30`  
 </details>
 <details>
 <summary><code>client_class CBoneFollower</code></summary>
 
-class_id: `0`  
+class_id: `12`  
 sizeof: `0xa70`  
 </details>
 <details>
 <summary><code>client_class CBreakableProp</code></summary>
 
-class_id: `0`  
+class_id: `13`  
 sizeof: `0x1630`  
 </details>
 <details>
 <summary><code>client_class CBreakableSurface</code></summary>
 
-class_id: `0`  
+class_id: `14`  
 sizeof: `0xec0`  
 </details>
 <details>
 <summary><code>client_class CCarePackageInsightProp</code></summary>
 
-class_id: `0`  
+class_id: `15`  
 sizeof: `0x1680`  
 </details>
 <details>
 <summary><code>client_class CCascadeLight</code></summary>
 
-class_id: `0`  
+class_id: `16`  
 sizeof: `0xbb0`  
 </details>
 <details>
 <summary><code>client_class CColorCorrection</code></summary>
 
-class_id: `0`  
+class_id: `17`  
 sizeof: `0xbb0`  
 </details>
 <details>
 <summary><code>client_class CCrossbowBolt</code></summary>
 
-class_id: `0`  
+class_id: `18`  
 sizeof: `0x2e60`  
 </details>
 <details>
 <summary><code>client_class CDeathBoxProp</code></summary>
 
-class_id: `0`  
+class_id: `19`  
 sizeof: `0x16b0`  
 </details>
 <details>
 <summary><code>client_class CDynamicLight</code></summary>
 
-class_id: `0`  
+class_id: `20`  
 sizeof: `0xa80`  
 </details>
 <details>
 <summary><code>client_class CDynamicProp</code></summary>
 
-class_id: `0`  
+class_id: `21`  
 sizeof: `0x1670`  
 </details>
 <details>
 <summary><code>client_class CDynamicPropLightweight</code></summary>
 
-class_id: `0`  
+class_id: `22`  
 sizeof: `0x1670`  
 </details>
 <details>
 <summary><code>client_class CEntityBlocker</code></summary>
 
-class_id: `0`  
+class_id: `23`  
 sizeof: `0xa60`  
 </details>
 <details>
 <summary><code>client_class CEntityDissolve</code></summary>
 
-class_id: `0`  
+class_id: `24`  
 sizeof: `0xa90`  
 </details>
 <details>
 <summary><code>client_class CEntityLinkPage</code></summary>
 
-class_id: `0`  
+class_id: `25`  
 sizeof: `0x1270`  
 </details>
 <details>
 <summary><code>client_class CEnvDecoy</code></summary>
 
-class_id: `0`  
+class_id: `26`  
 sizeof: `0x1630`  
 </details>
 <details>
 <summary><code>client_class CEnvWind</code></summary>
 
-class_id: `0`  
+class_id: `27`  
 sizeof: `0xbd0`  
 </details>
 <details>
 <summary><code>client_class CFerroProp</code></summary>
 
-class_id: `0`  
+class_id: `28`  
 sizeof: `0x1670`  
 </details>
 <details>
 <summary><code>client_class CFirstPersonProxy</code></summary>
 
-class_id: `0`  
+class_id: `29`  
 sizeof: `0x1690`  
 </details>
 <details>
 <summary><code>client_class CFuncBrush</code></summary>
 
-class_id: `0`  
+class_id: `30`  
 sizeof: `0xad0`  
 </details>
 <details>
 <summary><code>client_class CFuncBrushLightweight</code></summary>
 
-class_id: `0`  
+class_id: `31`  
 sizeof: `0xad0`  
 </details>
 <details>
 <summary><code>client_class CFuncMoveLinear</code></summary>
 
-class_id: `0`  
+class_id: `32`  
 sizeof: `0xa90`  
 </details>
 <details>
 <summary><code>client_class CGameRulesProxy</code></summary>
 
-class_id: `0`  
+class_id: `33`  
 sizeof: `0xa60`  
 </details>
 <details>
 <summary><code>client_class CGlobalNonRewinding</code></summary>
 
-class_id: `0`  
+class_id: `34`  
 sizeof: `0x1270`  
 </details>
 <details>
 <summary><code>client_class CGrappleHook</code></summary>
 
-class_id: `0`  
+class_id: `35`  
 sizeof: `0x1640`  
 </details>
 <details>
 <summary><code>client_class CHardPointEntity</code></summary>
 
-class_id: `0`  
+class_id: `36`  
 sizeof: `0xaa0`  
 </details>
 <details>
 <summary><code>client_class CHardPointFrontierEntity</code></summary>
 
-class_id: `0`  
+class_id: `37`  
 sizeof: `0xaa0`  
 </details>
 <details>
 <summary><code>client_class CHealthKit</code></summary>
 
-class_id: `0`  
+class_id: `38`  
 sizeof: `0x1630`  
 </details>
 <details>
 <summary><code>client_class CImportantOnEntSound</code></summary>
 
-class_id: `0`  
+class_id: `39`  
 sizeof: `0xa80`  
 </details>
 <details>
 <summary><code>client_class CInfoPlacementHelper</code></summary>
 
-class_id: `0`  
+class_id: `40`  
 sizeof: `0xa80`  
 </details>
 <details>
 <summary><code>client_class CInfoTarget</code></summary>
 
-class_id: `0`  
+class_id: `41`  
 sizeof: `0xa60`  
 </details>
 <details>
 <summary><code>client_class CInfoTargetGravity</code></summary>
 
-class_id: `0`  
+class_id: `42`  
 sizeof: `0xa70`  
 </details>
 <details>
 <summary><code>client_class CInfoTargetMinimap</code></summary>
 
-class_id: `0`  
+class_id: `43`  
 sizeof: `0xa60`  
 </details>
 <details>
 <summary><code>client_class CLootGrabber</code></summary>
 
-class_id: `0`  
+class_id: `44`  
 sizeof: `0x1680`  
 </details>
 <details>
 <summary><code>client_class CLootRoller</code></summary>
 
-class_id: `0`  
+class_id: `45`  
 sizeof: `0x16a0`  
 </details>
 <details>
 <summary><code>client_class CMaterialHarvester</code></summary>
 
-class_id: `0`  
+class_id: `46`  
 sizeof: `0x1680`  
 </details>
 <details>
 <summary><code>client_class CMissile</code></summary>
 
-class_id: `0`  
+class_id: `47`  
 sizeof: `0x2fb0`  
 </details>
 <details>
 <summary><code>client_class CMovieDisplay</code></summary>
 
-class_id: `0`  
+class_id: `48`  
 sizeof: `0xbc0`  
 </details>
 <details>
 <summary><code>client_class CNPC_Drone</code></summary>
 
-class_id: `0`  
+class_id: `49`  
 sizeof: `0x1e30`  
 </details>
 <details>
 <summary><code>client_class CNPC_Dropship</code></summary>
 
-class_id: `0`  
+class_id: `50`  
 sizeof: `0x1e40`  
 </details>
 <details>
 <summary><code>client_class CNPC_SentryTurret</code></summary>
 
-class_id: `0`  
+class_id: `51`  
 sizeof: `0x1e30`  
 </details>
 <details>
 <summary><code>client_class CNPC_Titan</code></summary>
 
-class_id: `0`  
+class_id: `52`  
 sizeof: `0x1eb0`  
 </details>
 <details>
 <summary><code>client_class CParticleSystem</code></summary>
 
-class_id: `0`  
+class_id: `53`  
 sizeof: `0xb20`  
 </details>
 <details>
 <summary><code>client_class CPhysicsProp</code></summary>
 
-class_id: `0`  
+class_id: `54`  
 sizeof: `0x1690`  
 </details>
 <details>
 <summary><code>client_class CPlayer</code></summary>
 
-class_id: `0`  
+class_id: `55`  
 sizeof: `0x4950`  
 </details>
 <details>
 <summary><code>client_class CPlayerDecoy</code></summary>
 
-class_id: `0`  
+class_id: `56`  
 sizeof: `0x16a0`  
 </details>
 <details>
 <summary><code>client_class CPlayerTasklist</code></summary>
 
-class_id: `0`  
+class_id: `57`  
 sizeof: `0xfb0`  
 </details>
 <details>
 <summary><code>client_class CPlayerVehicle</code></summary>
 
-class_id: `0`  
+class_id: `58`  
 sizeof: `0x1d00`  
 </details>
 <details>
 <summary><code>client_class CPlayerWaypoint</code></summary>
 
-class_id: `0`  
+class_id: `59`  
 sizeof: `0xd60`  
 </details>
 <details>
 <summary><code>client_class CPointCamera</code></summary>
 
-class_id: `0`  
+class_id: `60`  
 sizeof: `0xb10`  
 </details>
 <details>
 <summary><code>client_class CPortal_PointPush</code></summary>
 
-class_id: `0`  
+class_id: `61`  
 sizeof: `0xa80`  
 </details>
 <details>
 <summary><code>client_class CPostProcessController</code></summary>
 
-class_id: `0`  
+class_id: `62`  
 sizeof: `0xa80`  
 </details>
 <details>
 <summary><code>client_class CPredictedFirstPersonProxy</code></summary>
 
-class_id: `0`  
+class_id: `63`  
 sizeof: `0x16b0`  
 </details>
 <details>
 <summary><code>client_class CProjectile</code></summary>
 
-class_id: `0`  
+class_id: `64`  
 sizeof: `0x2e30`  
 </details>
 <details>
 <summary><code>client_class CPropDoor</code></summary>
 
-class_id: `0`  
+class_id: `65`  
 sizeof: `0x1730`  
 </details>
 <details>
 <summary><code>client_class CPropSurvival</code></summary>
 
-class_id: `0`  
+class_id: `66`  
 sizeof: `0x1660`  
 </details>
 <details>
 <summary><code>client_class CRopeKeyframe</code></summary>
 
-class_id: `0`  
+class_id: `67`  
 sizeof: `0xf60`  
 </details>
 <details>
 <summary><code>client_class CScriptMover</code></summary>
 
-class_id: `0`  
+class_id: `68`  
 sizeof: `0x1860`  
 </details>
 <details>
 <summary><code>client_class CScriptMoverTrainNode</code></summary>
 
-class_id: `0`  
+class_id: `69`  
 sizeof: `0x1090`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData</code></summary>
 
-class_id: `0`  
+class_id: `70`  
 sizeof: `0xc70`  
 </details>
 <details>
 <summary><code>client_class CScriptNetDataGlobal</code></summary>
 
-class_id: `0`  
+class_id: `78`  
 sizeof: `0xda0`  
 </details>
 <details>
 <summary><code>client_class CScriptNetDataGlobalNonRewind</code></summary>
 
-class_id: `0`  
+class_id: `79`  
 sizeof: `0xda0`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_DEATH_BOX</code></summary>
 
-class_id: `0`  
+class_id: `71`  
 sizeof: `0xce0`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_GLOBAL</code></summary>
 
-class_id: `0`  
+class_id: `72`  
 sizeof: `0xda0`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_GLOBAL_NON_REWIND</code></summary>
 
-class_id: `0`  
+class_id: `73`  
 sizeof: `0xda0`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_PLAYER_EXCLUSIVE</code></summary>
 
-class_id: `0`  
+class_id: `74`  
 sizeof: `0xd40`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_PLAYER_EXCLUSIVE_EXPANDED</code></summary>
 
-class_id: `0`  
+class_id: `75`  
 sizeof: `0xdb0`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_PLAYER_GLOBAL</code></summary>
 
-class_id: `0`  
+class_id: `76`  
 sizeof: `0xd80`  
 </details>
 <details>
 <summary><code>client_class CScriptNetData_SNDC_TITAN_SOUL</code></summary>
 
-class_id: `0`  
+class_id: `77`  
 sizeof: `0xcf0`  
 </details>
 <details>
 <summary><code>client_class CScriptProp</code></summary>
 
-class_id: `0`  
+class_id: `80`  
 sizeof: `0x1710`  
 </details>
 <details>
 <summary><code>client_class CScriptTraceVolume</code></summary>
 
-class_id: `0`  
+class_id: `81`  
 sizeof: `0xa90`  
 </details>
 <details>
 <summary><code>client_class CShieldProp</code></summary>
 
-class_id: `0`  
+class_id: `82`  
 sizeof: `0x1680`  
 </details>
 <details>
 <summary><code>client_class CSkyCamera</code></summary>
 
-class_id: `0`  
+class_id: `83`  
 sizeof: `0xa60`  
 </details>
 <details>
 <summary><code>client_class CStatusEffectPlugin</code></summary>
 
-class_id: `0`  
+class_id: `84`  
 sizeof: `0xac0`  
 </details>
 <details>
 <summary><code>client_class CTEBreakModel</code></summary>
 
-class_id: `0`  
+class_id: `86`  
 sizeof: `0x70`  
 </details>
 <details>
 <summary><code>client_class CTEEffectDispatch</code></summary>
 
-class_id: `0`  
+class_id: `87`  
 sizeof: `0xc8`  
 </details>
 <details>
 <summary><code>client_class CTEExplosion</code></summary>
 
-class_id: `0`  
+class_id: `88`  
 sizeof: `0x80`  
 </details>
 <details>
 <summary><code>client_class CTEGibEvent</code></summary>
 
-class_id: `0`  
+class_id: `89`  
 sizeof: `0x38`  
 </details>
 <details>
 <summary><code>client_class CTEParticleSystem</code></summary>
 
-class_id: `0`  
+class_id: `90`  
 sizeof: `0x38`  
 </details>
 <details>
 <summary><code>client_class CTEPhysicsProp</code></summary>
 
-class_id: `0`  
+class_id: `91`  
 sizeof: `0x60`  
 </details>
 <details>
 <summary><code>client_class CTEProjectileTrail</code></summary>
 
-class_id: `0`  
+class_id: `92`  
 sizeof: `0x58`  
 </details>
 <details>
 <summary><code>client_class CTEScriptParticleSystem</code></summary>
 
-class_id: `0`  
+class_id: `93`  
 sizeof: `0x50`  
 </details>
 <details>
 <summary><code>client_class CTEScriptParticleSystemOnEntity</code></summary>
 
-class_id: `0`  
+class_id: `94`  
 sizeof: `0x40`  
 </details>
 <details>
 <summary><code>client_class CTEScriptParticleSystemOnEntityWithPos</code></summary>
 
-class_id: `0`  
+class_id: `95`  
 sizeof: `0x58`  
 </details>
 <details>
 <summary><code>client_class CTEShatterSurface</code></summary>
 
-class_id: `0`  
+class_id: `96`  
 sizeof: `0x68`  
 </details>
 <details>
 <summary><code>client_class CTESoundDispatch</code></summary>
 
-class_id: `0`  
+class_id: `97`  
 sizeof: `0x48`  
 </details>
 <details>
 <summary><code>client_class CTeam</code></summary>
 
-class_id: `0`  
+class_id: `85`  
 sizeof: `0xba0`  
 </details>
 <details>
 <summary><code>client_class CTitanSoul</code></summary>
 
-class_id: `0`  
+class_id: `98`  
 sizeof: `0xde0`  
 </details>
 <details>
 <summary><code>client_class CTriggerCylinderHeavy</code></summary>
 
-class_id: `0`  
+class_id: `99`  
 sizeof: `0xb90`  
 </details>
 <details>
 <summary><code>client_class CTriggerPlayerMovement</code></summary>
 
-class_id: `0`  
+class_id: `100`  
 sizeof: `0xab0`  
 </details>
 <details>
 <summary><code>client_class CTriggerPointGravity</code></summary>
 
-class_id: `0`  
+class_id: `101`  
 sizeof: `0xac0`  
 </details>
 <details>
 <summary><code>client_class CTriggerSlipSphere</code></summary>
 
-class_id: `0`  
+class_id: `102`  
 sizeof: `0xad0`  
 </details>
 <details>
 <summary><code>client_class CTurret</code></summary>
 
-class_id: `0`  
+class_id: `103`  
 sizeof: `0x1a20`  
 </details>
 <details>
 <summary><code>client_class CVFogVolume</code></summary>
 
-class_id: `0`  
+class_id: `104`  
 sizeof: `0xb20`  
 </details>
 <details>
 <summary><code>client_class CVGuiScreen</code></summary>
 
-class_id: `0`  
+class_id: `105`  
 sizeof: `0xb10`  
 </details>
 <details>
 <summary><code>client_class CVortexSphere</code></summary>
 
-class_id: `0`  
+class_id: `106`  
 sizeof: `0xab0`  
 </details>
 <details>
 <summary><code>client_class CWaterLODControl</code></summary>
 
-class_id: `0`  
+class_id: `107`  
 sizeof: `0xa70`  
 </details>
 <details>
 <summary><code>client_class CWeaponX</code></summary>
 
-class_id: `0`  
+class_id: `108`  
 sizeof: `0x6800`  
 </details>
 <details>
 <summary><code>client_class CWorld</code></summary>
 
-class_id: `0`  
+class_id: `109`  
 sizeof: `0x1330`  
 </details>
 <details>
 <summary><code>client_class CZipline</code></summary>
 
-class_id: `0`  
+class_id: `110`  
 sizeof: `0x1090`  
 </details>
 <details>
 <summary><code>client_class CZiplineEnd</code></summary>
 
-class_id: `0`  
+class_id: `111`  
 sizeof: `0xa80`  
 </details>
 <details>
 <summary><code>client_class CZiprail</code></summary>
 
-class_id: `0`  
+class_id: `112`  
 sizeof: `0x13e0`  
 </details>
 <details>
 <summary><code>client_class DoorMover</code></summary>
 
-class_id: `0`  
+class_id: `113`  
 sizeof: `0x1870`  
 </details>
 <details>
 <summary><code>client_class ScriptMoverLightweight</code></summary>
 
-class_id: `0`  
+class_id: `114`  
 sizeof: `0x1870`  
 </details>
 ```
